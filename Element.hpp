@@ -1,13 +1,38 @@
-//Tworzenie struktury która za pomoc¹ jednego pointera wskazuje na jednoczeœnie priorytet i wartoœæ elementu
-template <typename T, typename P>
+#include <iostream>
+
+using namespace std;
+
+template<typename T>
 class Element {
+
+private:
+
+	int priority;
+	T value;
+
 
 public:
 
-    T value;
-    P priority;
+	Element(T val, int prio): value(val), priority(prio) {}
+	Element() {}
+	~Element() {}
 
-    Element(){}
-    Element(const T& val, const P& prio) : value(val), priority(prio) {}
+	int getPriority() {
+
+		return priority;
+
+	}
+
+	T getValue() {
+
+		return value;
+
+	}
+
+	void insertPriority(int newPriority) {
+
+		priority = newPriority;
+
+	}
 
 };
